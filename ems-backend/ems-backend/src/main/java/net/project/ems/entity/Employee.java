@@ -6,29 +6,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity //specify class as a jpa entity
-@Table(name = "Employees") //specify table details
+@Entity // specify class as a jpa entity
+@Table(name = "Employees") // specify table details
 public class Employee {
-    public Employee(long id, String firstName, String lastName, String email) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
-
-    public Employee(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //AUTO INCREMENT
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO INCREMENT
     private long id;
 
     @Column(name = "first_name")
@@ -37,7 +24,7 @@ public class Employee {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "email_id", nullable = false, unique = true) //make it not false
+    @Column(name = "email_id", nullable = false, unique = true) // make it not false
     private String email;
 
     public long getId() {
